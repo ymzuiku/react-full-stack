@@ -6,7 +6,7 @@ module.exports = shipit => {
   shipit.initConfig({
     default: {
       deployTo: remotePath,
-      repositoryUrl: 'git@gitlab.com:ymzuiku/gantt-full.git',
+      repositoryUrl: 'git@github.com:ymzuiku/react-full-stack.git',
     },
     dev: {
       servers: ['root@120.79.150.132'],
