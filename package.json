@@ -4,6 +4,7 @@
   "description": "",
   "main": "shipitfile.js",
   "scripts": {
+    "install-all": "yarn && cd client && yarn && cd ../server && yarn",
     "deploy": "shipit dev deploy",
     "push": "git add . && git commit -m 'shipit post' && git push && yarn deploy",
     "server": "cd server && nodemon server.js",
@@ -11,7 +12,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "", 
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "shipit-cli": "^4.1.1",
