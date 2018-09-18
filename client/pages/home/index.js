@@ -13,7 +13,7 @@ class Home extends React.PureComponent {
       <div>
         <div>I's home, load redux: {this.props.num}</div>
         <button onClick={this.changeNum}>add num</button>
-        <Link href="/">
+        <Link href="/index">
           <a>go to index page</a>
         </Link>
       </div>
