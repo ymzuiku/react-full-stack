@@ -16,7 +16,9 @@ class Home extends React.PureComponent {
       <div>
         <div>I's home, load redux: {this.props.num}</div>
         <button onClick={this.changeNum}>add num</button>
-        <a onClick={this.goback}>go to index page</a>
+        <a style={{ color: '#33f' }} onClick={this.goback}>
+          go to index page
+        </a>
       </div>
     );
   }
