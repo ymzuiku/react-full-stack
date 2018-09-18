@@ -16,13 +16,12 @@ module.exports = shipit => {
   shipit.task('copy', async () => {
     await shipit.copyToRemote('./ssh', '/db/static/public/gantt');
   });
-  shipit.task('server', async () => {
+  shipit.task('prod', async () => {
     await shipit.remote(`{pm2 delete ${appName}-server} || {}`);
     await shipit.remote(
       `cd ${currentPath} && yarn && cd server && port=4000 deploy=1 pm2 start server.js --name=${appName}-server -i 0`,
     );
-  });
-  shipit.task('client', async () => {
+
     await shipit.remote(`{pm2 delete ${appName}-client} || {}`);
     await shipit.remote(
       `cd ${currentPath}/client && ../node_modules/.bin/next build && port=80 deploy=1 pm2 start client.js --name=${appName}-client -i 0`,
@@ -30,6 +29,6 @@ module.exports = shipit => {
   });
   // 监听published事件，触发后就执行任务。
   shipit.on('published', () => {
-    shipit.start(['copy', 'server', 'client']);
+    shipit.start(['copy', 'prod']);
   });
 };
