@@ -1,7 +1,7 @@
 module.exports = shipit => {
   require('shipit-deploy')(shipit);
-  const appName = 'gantt';
-  const remotePath = `/db/ssr/appName`;
+  const appName = 'full-stack';
+  const remotePath = `/db/ssr/${appName}`;
   const currentPath = remotePath + '/current';
   shipit.initConfig({
     default: {
