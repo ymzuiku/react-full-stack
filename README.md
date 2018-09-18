@@ -7,26 +7,29 @@ copy this code to Terminal, and change `<your-project>` string
 ```sh
 react-full-stack(){
   git clone -b master --single-branch https://github.com/ymzuiku/react-full-stack.git $1
-  cd $1 && yarn install-all
+  cd $1 && yarn install
 }
 react-full-stack your-project
 ```
 
-
 ## Run
 
-Run Koa-Server
+** Open MySQL server in localhost:3306 **
+** Set MySQL password in server.js **
+
+Run Koa-Server:
 
 ```
 $ yarn server
 ```
 
-Run Next-React
+Open other terminal, run Next-React:
 
 ```sh
-$ yarn web
+$ yarn client
 ```
-Wait done, then open http://127.0.0.1:4001
+
+Wait done, open http://127.0.0.1:4001 in browser
 
 
 ## License
