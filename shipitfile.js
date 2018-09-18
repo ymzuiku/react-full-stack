@@ -23,7 +23,7 @@ module.exports = shipit => {
   });
   shipit.task('client', async () => {
     await shipit.remote(
-      `{pm2 delete ${appName}-client} || {} && cd ${currentPath} && yarn build && cd client && port=80 deploy=1 pm2 start client.js --name=${appName}-client -i 0`,
+      `{pm2 delete ${appName}-client} || {} && cd ${currentPath}/client && npx next build && port=80 deploy=1 pm2 start client.js --name=${appName}-client -i 0`,
     );
   });
   // 监听published事件，触发后就执行任务。
