@@ -12,21 +12,22 @@ react-full-stack(){
 react-full-stack your-project
 ```
 
-Wait done, then open http://127.0.0.1:3300
 
-## Use
+## Run
 
-Run dev web
+Run Koa-Server
+
+```
+$ yarn server
+```
+
+Run Next-React
 
 ```sh
 $ yarn web
 ```
+Wait done, then open http://127.0.0.1:4001
 
-Run server
-
-```
-$ yarn servers
-```
 
 ## License
 

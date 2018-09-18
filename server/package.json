@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
+    "server": "node server.js",
     "debug": "node –inspect server.js"
   },
   "devDependencies": {
