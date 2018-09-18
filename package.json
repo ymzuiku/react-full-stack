@@ -1,7 +1,7 @@
 {
-  "name": "gantt-full",
-  "version": "1.0.0",
-  "description": "",
+  "name": "react-full-stack",
+  "version": "0.0.1",
+  "description": "Isomorphic: Next.js and Koa Server Separate",
   "main": "shipitfile.js",
   "scripts": {
     "install-all": "yarn && cd client && yarn && cd ../server && yarn",

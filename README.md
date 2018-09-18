@@ -1,4 +1,4 @@
-# Isomorphic: Next and Koa Separate
+# Isomorphic: Next.js and Koa Server Separate
 
 ## Install 
 
