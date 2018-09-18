@@ -39,7 +39,7 @@ function getOrCreateStore(initialState) {
 }
 
 const withNextRedux = App => {
-  return class AppWithRedux extends React.Component {
+  return class AppWithRedux extends React.PureComponent {
     static async getInitialProps(appContext) {
       // Get or Create the store with `undefined` as initialState
       // This allows you to set a custom default initialState

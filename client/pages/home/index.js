@@ -1,21 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import { connect } from 'react-redux';
-import selfAxios from '../lib/utils/selfAxios';
-import * as actions from '../lib/actions';
+import * as actions from '../../lib/actions';
 
-const isDev = process.env.deploy === undefined;
-
-class Index extends React.PureComponent {
-  static async getInitialProps() {
-    const res = await selfAxios.get('/nojwt/test');
-    const post = await selfAxios.post('/api/nojwt/user/login', {
-      username: 'test-' + Date.now(),
-      password: '123',
-      msg: 'the-next',
-    });
-    return { res: res.data, post: post.data, isDev };
-  }
+class Home extends React.PureComponent {
   changeNum = () => {
     this.props.changeNum(this.props.num + 1);
   };
@@ -23,10 +11,10 @@ class Index extends React.PureComponent {
     console.log(this.props);
     return (
       <div>
-        <div>Welcome to next {this.props.num}</div>
+        <div>I's home, load redux: {this.props.num}</div>
         <button onClick={this.changeNum}>add num</button>
-        <Link href="/home">
-          <a>go to home page</a>
+        <Link href="/">
+          <a>go to index page</a>
         </Link>
       </div>
     );
@@ -50,4 +38,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Index);
+)(Home);
