@@ -7,7 +7,7 @@ copy this code to Terminal, and change `<your-project>` string
 ```sh
 react-full-stack(){
   git clone -b master --single-branch https://github.com/ymzuiku/react-full-stack $1
-  cd $1 && yarn install-all`
+  cd $1 && yarn install-all
 }
 react-full-stack your-project
 ```
