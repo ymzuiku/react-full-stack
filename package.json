@@ -1,0 +1,20 @@
+{
+  "name": "gantt-full",
+  "version": "1.0.0",
+  "description": "",
+  "main": "shipitfile.js",
+  "scripts": {
+    "deploy": "shipit dev deploy",
+    "push": "git add . && git commit -m 'shipit post' && git push && yarn deploy",
+    "server": "cd server && nodemon server.js",
+    "web": "cd client && yarn web",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "", 
+  "license": "ISC",
+  "devDependencies": {
+    "shipit-cli": "^4.1.1",
+    "shipit-deploy": "^4.1.1"
+  }
+}
