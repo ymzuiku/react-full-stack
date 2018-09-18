@@ -4,6 +4,7 @@
   "description": "Isomorphic: Next.js and Koa Server Separate",
   "main": "shipitfile.js",
   "scripts": {
+    "build": "cd client && next build",
     "deploy": "shipit dev deploy",
     "push": "git add . && git commit -m 'shipit post' && git push && yarn deploy",
     "client": "cd client && node client",

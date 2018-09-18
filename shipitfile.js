@@ -18,12 +18,12 @@ module.exports = shipit => {
   });
   shipit.task('server', async () => {
     await shipit.remote(
-      `cd ${currentPath}/server && yarn && {pm2 delete ${appName}-server} || {} && port=4000 deploy=1 pm2 start server.js --name=${appName}-server -i 0`,
+      `{pm2 delete ${appName}-server} || {} && cd ${currentPath} && yarn && cd server && port=4000 deploy=1 pm2 start server.js --name=${appName}-server -i 0`,
     );
   });
   shipit.task('client', async () => {
     await shipit.remote(
-      `cd ${currentPath}/client && yarn && yarn build && {pm2 delete ${appName}-client} || {} && port=80 deploy=1 pm2 start client.js --name=${appName}-client -i 0`,
+      `{pm2 delete ${appName}-client} || {} && cd ${currentPath} && yarn build && cd client && port=80 deploy=1 pm2 start client.js --name=${appName}-client -i 0`,
     );
   });
   // 监听published事件，触发后就执行任务。
