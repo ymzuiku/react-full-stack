@@ -26,7 +26,6 @@ export default class MyDocument extends Document {
           <meta name="msapplication-tap-highlight" content="no" />
           <meta name="theme-color" content="#000000" />
           <title>full-stack</title>
-          <link rel="stylesheet" href="/_next/static/style.css" />
           <style>{`
             html {
               margin: 0px;
