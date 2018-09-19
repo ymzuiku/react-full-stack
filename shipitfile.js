@@ -13,7 +13,7 @@ module.exports = shipit => {
       branch: 'master',
     },
   });
-  shipit.task('copy', async () => {
+  shipit.task('copyToRemote', async () => {
     await shipit.copyToRemote('./ssh', '/db/static/public/gantt');
   });
   shipit.task('prod', async () => {
@@ -29,6 +29,6 @@ module.exports = shipit => {
   });
   // listen published event
   shipit.on('published', () => {
-    shipit.start(['copy', 'prod']);
+    shipit.start(['copyToRemote', 'prod']);
   });
 };

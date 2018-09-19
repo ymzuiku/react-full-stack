@@ -27,7 +27,7 @@ class Index extends React.PureComponent {
       <div className="col center vh100">
         <div>Welcome to next {this.props.num}</div>
         <button onClick={this.changeNum}>add num</button>
-        <Link href="/home">
+        <Link href="/home" perfetch >
           <a>go to home page</a>
         </Link>
       </div>

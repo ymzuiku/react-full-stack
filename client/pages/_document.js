@@ -1,7 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import '../css/main.scss';
 
-
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
