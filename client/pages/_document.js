@@ -26,48 +26,6 @@ export default class MyDocument extends Document {
           <meta name="msapplication-tap-highlight" content="no" />
           <meta name="theme-color" content="#000000" />
           <title>full-stack</title>
-          <style>{`
-            html {
-              margin: 0px;
-              padding: 0px;
-            }
-
-            body {
-              margin: 0px;
-              padding: 0px;
-              height: 100vh;
-              width: 100vw;
-              overflow: hidden;
-            }
-        
-            * {
-              -webkit-user-select: none;
-              -webkit-appearance: none;
-              -webkit-overflow-scrolling: touch;
-            }
-        
-            *,
-            *:before,
-            *:after {
-              -webkit-tap-highlight-color: transparent;
-              -webkit-box-sizing: border-box;
-              -moz-box-sizing: border-box;
-              -ms-box-sizing: border-box;
-              box-sizing: border-box;
-            }
-        
-            input,
-            button {
-              outline: none;
-              border: none;
-            }
-        
-            #root {
-              display: flex;
-              height: 100%;
-              width: 100%;
-            }
-          `}</style>
         </Head>
         <body className="custom_class">
           <Main />
