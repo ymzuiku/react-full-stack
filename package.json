@@ -9,7 +9,8 @@
     "push": "git add . && git commit -m 'shipit post' && git push && yarn deploy",
     "client": "cd client && node client",
     "server": "cd server && node server.js",
-    "nodemon": "cd server && nodemon server.js",
+    "start": "pmd all && pm2 start client/client.js && pm2 start server/server.js --watch && pm2 log",
+    "lint": "node_modules/.bin/eslint 'src/**/*.js' --cache --cache-location '.node_modules/.cache/.eslint_cache/'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -30,9 +31,9 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "shipit-cli": "^4.1.1",
-    "shipit-deploy": "^4.1.1",
     "@koa/cors": "^2.2.2",
+    "eslint": "^5.6.0",
+    "eslint-plugin-react": "^7.11.1",
     "fs-extra": "^7.0.0",
     "jsonwebtoken": "^8.3.0",
     "koa": "^2.5.3",
@@ -43,6 +44,11 @@
     "koa-router": "^7.4.0",
     "mockjs": "^1.0.1-beta3",
     "mysql2": "^1.6.1",
-    "sequelize": "^4.38.1"
-  }
+    "sequelize": "^4.38.1",
+    "shipit-cli": "^4.1.1",
+    "shipit-deploy": "^4.1.1"
+  },
+  "pre-commit": [
+    "lint"
+  ]
 }
