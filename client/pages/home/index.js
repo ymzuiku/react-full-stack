@@ -1,7 +1,7 @@
 import React from 'react';
 import Router from 'next/router';
 import { connect } from 'react-redux';
-import * as actions from '../../lib/actions';
+import * as actions from '../../actions';
 
 class Home extends React.PureComponent {
   changeNum = () => {

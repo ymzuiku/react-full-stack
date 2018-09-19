@@ -1,0 +1,13 @@
+$font-size: 24px;
+.view {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  background: #f88;
+}
+
+.test {
+  font-size: 100px;
+}

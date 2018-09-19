@@ -1,8 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import { connect } from 'react-redux';
-import selfAxios from '../lib/utils/selfAxios';
-import * as actions from '../lib/actions';
+import selfAxios from '../utils/selfAxios';
+import * as actions from '../actions';
+import css from '../css/layout.scss';
 
 const isDev = process.env.deploy === undefined;
 
@@ -24,7 +25,7 @@ class Index extends React.PureComponent {
   render() {
     console.log(this.props);
     return (
-      <div>
+      <div className={css.test}>
         <div>Welcome to next {this.props.num}</div>
         <button onClick={this.changeNum}>add num</button>
         <Link href="/home">

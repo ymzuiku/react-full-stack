@@ -1,6 +1,6 @@
 import App, { Container } from 'next/app';
 import React from 'react';
-import { withNextRedux, autoStorageSave } from '../lib/utils/withNextRedux';
+import { withNextRedux, autoStorageSave } from '../utils/withNextRedux';
 import { Provider } from 'react-redux';
 
 class MyApp extends App {
