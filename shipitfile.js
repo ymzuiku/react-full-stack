@@ -27,7 +27,7 @@ module.exports = shipit => {
       `cd ${currentPath}/client && ../node_modules/.bin/next build && port=80 deploy=1 pm2 start client.js --name=${appName}-client -i 0`,
     );
   });
-  // 监听published事件，触发后就执行任务。
+  // listen published event
   shipit.on('published', () => {
     shipit.start(['copy', 'prod']);
   });

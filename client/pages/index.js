@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { connect } from 'react-redux';
 import selfAxios from '../lib/utils/selfAxios';
 import * as actions from '../lib/actions';
-import { FullCenter } from '../lib/styleds';
 
 const isDev = process.env.deploy === undefined;
 
