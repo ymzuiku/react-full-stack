@@ -1,20 +1,9 @@
 // next.config.js
-const withSass = require('@zeit/next-sass');
-
-module.exports = withSass({
-  pageExtensions: ['js'],
+const withLess = require('@zeit/next-less');
+module.exports = withLess({
   cssModules: false,
   cssLoaderOptions: {
-    allowMultiple: true,
     importLoaders: 1,
-    localIdentName: '[local]_[hash:base64:5]',
-  },
-  postcssLoaderOptions: {
-    parser: true,
-    config: {
-      ctx: {
-        theme: JSON.stringify(process.env.REACT_APP_THEME),
-      },
-    },
+    localIdentName: '[local]___[hash:base64:5]',
   },
 });
