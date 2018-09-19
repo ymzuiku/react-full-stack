@@ -9,8 +9,10 @@
     "push": "git add . && git commit -m 'shipit post' && git push && yarn deploy",
     "client": "cd client && node client",
     "server": "cd server && node server.js",
-    "start": "pmd all && pm2 start client/client.js && pm2 start server/server.js --watch && pm2 log",
-    "lint": "node_modules/.bin/eslint 'src/**/*.js' --cache --cache-location '.node_modules/.cache/.eslint_cache/'",
+    "start": "yarn stop &&  pm2 start client/client.js --name=full-stack-client && pm2 start server/server.js --watch --name=full-stack-server && pm2 log",
+    "lint-client": "node_modules/.bin/eslint 'client/**/*.js' --cache --cache-location '.node_modules/.cache/.eslint_cache/'",
+    "stop": "pm2 delete full-stack-client || echo '' && pm2 deleta full-stack-server || echo '' ",
+    "lint-server": "node_modules/.bin/eslint 'server/**/*.js' --cache --cache-location '.node_modules/.cache/.eslint_cache/'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -49,6 +51,7 @@
     "shipit-deploy": "^4.1.1"
   },
   "pre-commit": [
-    "lint"
+    "lint-client",
+    "lint-server"
   ]
 }

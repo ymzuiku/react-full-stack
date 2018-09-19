@@ -1,6 +1,6 @@
 # Isomorphic: Next.js and Koa Server Separate
 
-## Install 
+## Install
 
 copy this code to Terminal, and change `<your-project>` string
 
@@ -17,20 +17,26 @@ react-full-stack your-project
 ** Open MySQL server in localhost:3306 **
 ** Set MySQL password in server.js **
 
-Run Koa-Server:
+This project use pm2:
+
+```$
+$ npm install -g pm2
+```
+
+Run Client and Server
 
 ```
-$ yarn server
-```
-
-Open other terminal, run Next-React:
-
-```sh
-$ yarn client
+$ yarn start
 ```
 
 Wait done, open http://127.0.0.1:4001 in browser
 
+
+Stop Client and Server
+
+```sh
+$ yarn stop
+```
 
 ## License
 
