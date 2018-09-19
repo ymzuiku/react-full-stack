@@ -68,42 +68,9 @@ export default class MyDocument extends Document {
               height: 100%;
               width: 100%;
             }
-        
-            #perLoading {
-              opacity: 0;
-              z-index: 9999;
-              height: 7%;
-              overflow: hidden;
-              position: fixed;
-              left: 46.5%;
-              top: 42.5%;
-              animation: 0.66s linear infinite 0.5s spin;
-              -webkit-animation: 0.66s linear infinite 0.5s spin;
-            }
-            @-webkit-keyframes spin {
-              from {
-                opacity: 0.3;
-                -webkit-transform: rotate(0deg);
-              }
-              to {
-                opacity: 0.3;
-                -webkit-transform: rotate(359deg);
-              }
-            }
-            @keyframes spin {
-              from {
-                opacity: 0.3;
-                transform: rotate(0deg);
-              }
-              to {
-                opacity: 0.3;
-                transform: rotate(359deg);
-              }
-            }
           `}</style>
         </Head>
         <body className="custom_class">
-          <img id="perLoading" class="spin" src="/static/loading.png" />
           <Main />
           <NextScript />
         </body>
