@@ -19,13 +19,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@zeit/next-sass": "^0.2.0",
     "axios": "^0.18.0",
     "history": "^4.7.2",
     "immutable": "^3.8.2",
     "lodash": "^4.17.11",
     "next": "^6.1.2",
-    "node-sass": "^4.9.3",
     "postcss-flexbugs-fixes": "^4.1.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
