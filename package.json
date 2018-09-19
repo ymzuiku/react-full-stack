@@ -19,7 +19,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@zeit/next-less": "0.3.1-canary.2",
+    "@zeit/next-less": "^0.3.1-canary.2",
     "axios": "^0.18.0",
     "history": "^4.7.2",
     "immutable": "^3.8.2",
