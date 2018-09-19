@@ -17,14 +17,14 @@ module.exports = shipit => {
     await shipit.copyToRemote('./ssh', '/db/static/public/gantt');
   });
   shipit.task('prod', async () => {
-    await shipit.remote(`pm2 delete ${appName}-server || echo ''`);
+    await shipit.remote(`pm2 delete ${appName}-server || echo`);
     await shipit.remote(
-      `cd ${currentPath} && yarn && cd server && port=4000 deploy=1 pm2 start server.js --name=${appName}-server -i 0`,
+      `cd ${currentPath} && yarn && cd server && port=4000 deploy=1 pm2 start server.js --name=${appName}-server -i 0 || echo`,
     );
 
-    await shipit.remote(`pm2 delete ${appName}-client || echo ''`);
+    await shipit.remote(`pm2 delete ${appName}-client || echo`);
     await shipit.remote(
-      `cd ${currentPath}/client && ../node_modules/.bin/next build && port=80 deploy=1 pm2 start client.js --name=${appName}-client -i 0`,
+      `cd ${currentPath}/client && ../node_modules/.bin/next build && port=80 deploy=1 pm2 start client.js --name=${appName}-client -i 0 || echo`,
     );
   });
   // listen published event

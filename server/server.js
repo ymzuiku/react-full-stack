@@ -22,7 +22,7 @@ try {
   });
   db.authenticate();
 } catch (err) {
-  console.error('[react-full-stack]: No have mysql!');
+  console.warn('[react-full-stack]: No have mysql!');
 }
 
 const app = new Koa();
