@@ -5,14 +5,12 @@
   "main": "shipitfile.js",
   "scripts": {
     "build": "cd client && next build",
-    "deploy": "shipit dev deploy",
-    "push": "git add . && git commit -m 'shipit post' && git push && yarn deploy",
-    "client": "cd client && node client",
-    "server": "cd server && node server.js",
-    "start": "yarn stop &&  pm2 start client/client.js --name=full-stack-client && pm2 start server/server.js --watch --name=full-stack-server && pm2 log",
+    "start": "yarn stop && cd client && pm2 start client.js --name=fs-client && cd .. && pm2 start server/server.js --watch --name=fs-server && pm2 log",
+    "stop": "pm2 delete fs-client || echo '' && pm2 deleta fs-server || echo '' ",
     "lint-client": "node_modules/.bin/eslint 'client/**/*.js' --cache --cache-location '.node_modules/.cache/.eslint_cache/'",
-    "stop": "pm2 delete full-stack-client || echo '' && pm2 deleta full-stack-server || echo '' ",
     "lint-server": "node_modules/.bin/eslint 'server/**/*.js' --cache --cache-location '.node_modules/.cache/.eslint_cache/'",
+    "deploy": "shipit dev deploy",
+    "push": "git add . || echo '' && git commit -m 'shipit post' || echo '' && git push || echo '' && yarn deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

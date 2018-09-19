@@ -12,27 +12,29 @@ const jwt = require('jsonwebtoken');
 const Mock = require('mockjs');
 const isDev = process.env.deploy === undefined;
 
-const db = new Sequelize('test', 'root', '111Asd', {
-  host: '127.0.0.1',
-  port: 3306,
-  dialect: 'mysql',
-  dialectOptions: { charset: 'utf8mb4' },
-  pool: { max: 30, min: 0, acquire: 30000, idle: 10000 },
-});
-
-db.authenticate();
+try {
+  var db = new Sequelize('test', 'root', '111Asd', {
+    host: '127.0.0.1',
+    port: 3306,
+    dialect: 'mysql',
+    dialectOptions: { charset: 'utf8mb4' },
+    pool: { max: 30, min: 0, acquire: 30000, idle: 10000 },
+  });
+  db.authenticate();
+} catch (err) {
+  console.error('[react-full-stack]: No have mysql!');
+}
 
 const app = new Koa();
-
 app.use(
   cors({ 'Access-Control-Allow-Origin': '*', 'Access-Control-Max-Age': 43200 }),
 );
 app.use(compress({ threshold: 2048 }));
 app.use(helmet());
 app.use(bodyParser({ enableTypes: ['json', 'form'] }));
-// app.use(
-//   koaJwt({ secret: '123abc' }).unless({ path: [/^nojwt/g], method: 'GET' }),
-// );
+app.use(
+  koaJwt({ secret: '123abc' }).unless({ path: [/^nojwt/g], method: 'GET' }),
+);
 
 const router = new Router();
 function loadRouterDir(dir) {

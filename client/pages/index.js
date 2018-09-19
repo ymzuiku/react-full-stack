@@ -3,18 +3,21 @@ import Link from 'next/link';
 import { connect } from 'react-redux';
 import selfAxios from '../lib/utils/selfAxios';
 import * as actions from '../lib/actions';
+import { FullCenter } from '../lib/styleds';
 
 const isDev = process.env.deploy === undefined;
 
 class Index extends React.PureComponent {
   static async getInitialProps() {
-    const res = await selfAxios.get('/nojwt/test');
-    const post = await selfAxios.post('/api/nojwt/user/login', {
-      username: 'test-' + Date.now(),
-      password: '123',
-      msg: 'the-next',
-    });
-    return { res: res.data, post: post.data, isDev };
+    try {
+      var res = await selfAxios.get('/nojwt/test');
+      var user = await selfAxios.post('/api/nojwt/user/login', {
+        username: 'test-' + Date.now(),
+        password: '123',
+        msg: 'the-next',
+      });
+    } catch (error) {}
+    return { res: res && res.data, post: user && user.data, isDev };
   }
   changeNum = () => {
     this.props.changeNum(this.props.num + 1);

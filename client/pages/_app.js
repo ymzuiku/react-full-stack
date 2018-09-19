@@ -8,6 +8,12 @@ class MyApp extends App {
     super(props);
     autoStorageSave(this.props.reduxStore, 'next-data', ['test']);
   }
+  componentDidMount() {
+    const perLoading = document.getElementById('perLoading');
+    if (perLoading) {
+      perLoading.parentNode.removeChild(perLoading);
+    }
+  }
   render() {
     const { Component, pageProps, reduxStore } = this.props;
     return (
