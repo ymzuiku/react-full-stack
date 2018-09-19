@@ -1,12 +1,14 @@
 // next.config.js
 const withSass = require('@zeit/next-sass');
+
 module.exports = withSass({
-  // pageExtensions: ['js'],
-  cssModules: true,
-  // cssLoaderOptions: {
-  //   importLoaders: 1,
-  //   localIdentName: '[local]_[hash:base64:5]',
-  // },
+  pageExtensions: ['js'],
+  cssModules: false,
+  cssLoaderOptions: {
+    allowMultiple: true,
+    importLoaders: 1,
+    localIdentName: '[local]_[hash:base64:5]',
+  },
   postcssLoaderOptions: {
     parser: true,
     config: {

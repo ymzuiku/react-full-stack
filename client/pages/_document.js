@@ -1,4 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document';
+import '../css/main.scss';
+
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -23,8 +25,10 @@ export default class MyDocument extends Document {
           <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
           <meta httpEquiv="expires" content="0" />
           <meta httpEquiv="Cache-Control" content="no-siteapp" />
+          <meta name="msapplication-tap-highlight" content="no" />
           <meta name="theme-color" content="#000000" />
           <title>full-stack</title>
+          <link rel="stylesheet" href="/_next/static/style.css" />
           <style>{`
             html {
               margin: 0px;
@@ -34,7 +38,7 @@ export default class MyDocument extends Document {
             body {
               margin: 0px;
               padding: 0px;
-              height: 100%;
+              height: 100vh;
               width: 100vw;
               overflow: hidden;
             }

@@ -1,13 +1,45 @@
 $font-size: 24px;
-.view {
+.col {
   width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  background: #f88;
+}
+* {
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
 }
 
-.test {
-  font-size: 100px;
+.h0 {
+  height: 0%;
+}
+.h100 {
+  height: 100%;
+}
+.vh100 {
+  height: 100vh;
+}
+.w0 {
+  width: 0%;
+}
+.w100 {
+  width: 100%;
+}
+.vw100 {
+  width: 100vw;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.center {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
 }

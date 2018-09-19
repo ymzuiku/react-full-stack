@@ -2,6 +2,7 @@ import App, { Container } from 'next/app';
 import React from 'react';
 import { withNextRedux, autoStorageSave } from '../utils/withNextRedux';
 import { Provider } from 'react-redux';
+import '../css/main.scss';
 
 class MyApp extends App {
   constructor(props) {

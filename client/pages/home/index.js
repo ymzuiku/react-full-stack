@@ -13,7 +13,7 @@ class Home extends React.PureComponent {
   render() {
     console.log(this.props);
     return (
-      <div>
+      <div className='col vh100 center' >
         <div>I's home, load redux: {this.props.num}</div>
         <button onClick={this.changeNum}>add num</button>
         <a style={{ color: '#33f' }} onClick={this.goback}>
