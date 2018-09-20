@@ -4,7 +4,8 @@
   "description": "Isomorphic: Next.js and Koa Server Separate",
   "main": "shipitfile.js",
   "scripts": {
-    "build": "cd client && next build",
+    "export": "cd client && ../node_modules/.bin/next export",
+    "build": "cd client && ../node_modules/.bin/next build",
     "web": "cd client && node client.js",
     "server": "pm2 flush && pm2 delete fs-server || echo && cd server && pm2 start server.js --name=fs-server || echo && pm2 log",
     "start": "yarn stop && cd client && pm2 start client.js --name=fs-client || echo && cd ../ && pm2 start server/server.js --watch --name=fs-server || echo && open http://127.0.0.1:4001 && pm2 log",
